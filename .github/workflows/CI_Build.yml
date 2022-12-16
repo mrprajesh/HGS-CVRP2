@@ -13,6 +13,7 @@ jobs:
   build:
     strategy:
       matrix:
+        # Using windows 2019 to fix https://github.com/vidalt/HGS-CVRP/issues/33
         os: [ "ubuntu-latest", "windows-2019", "macos-latest" ]
     runs-on: ${{ matrix.os }}
     steps:
