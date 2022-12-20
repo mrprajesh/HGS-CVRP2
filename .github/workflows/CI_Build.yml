@@ -18,7 +18,7 @@ jobs:
       run: | 
         mkdir build 
         cd build
-        cmake .. -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles"
+        cmake .. -DCMAKE_BUILD_TYPE=Release -G "MinGW Makefiles"
         make bin
     - name: test bin on ${{ matrix.os }}
       run: |
@@ -27,11 +27,11 @@ jobs:
     - name: make lib on ${{ matrix.os }}
       run: |
         cd build
-        cmake .. -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles"
+        cmake .. -DCMAKE_BUILD_TYPE=Release -G "MinGW Makefiles"
         make lib
     - name: test lib on ${{ matrix.os }}
       run: |
         cd build
-        cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"        
+        cmake .. -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles"        
         make lib_test_c
         ctest -R lib --verbose
