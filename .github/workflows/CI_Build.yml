@@ -14,7 +14,9 @@ jobs:
     strategy:
       matrix:
         # Using windows 2019 to fix https://github.com/vidalt/HGS-CVRP/issues/33
-        os: [ "ubuntu-latest", "windows-2019", "macos-latest" ]
+        #~ os: [ "ubuntu-latest", "windows-2019", "macos-latest" ]
+        os: [ "windows-latest", "windows-2019"]
+        #~ build_platform: [Win32]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
